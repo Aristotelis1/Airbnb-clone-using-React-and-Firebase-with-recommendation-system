@@ -1,13 +1,325 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html{
+  font-size: 62.5%; /* 16px * 62,5 = 10px = 1rem */
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+  font: 1.6rem Helvetica;
+  height: 100vh;
+  margin: 0;
+}
+
+#root{
+  height: 100%;
+}
+
+.grid-container{
+  display: grid;
+  grid-template-areas: 
+  "header"
+  "main"
+  "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: 5rem 1fr 5rem;
+  height: 100%;
+}
+
+.header{
+  grid-area: header;
+  background-color: #203040;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.brand a{
+  color: #ffffff;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.header-links a{
+  color: #ffffff;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 1rem;
+}
+
+.header-links a:hover{
+  color: #ff8000;
+}
+
+.main{
+  grid-area: main;
+}
+
+.footer{
+  grid-area: footer;
+  background-color: #203040;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: right;
+
+}
+
+a{
+  text-decoration: none;
+}
+
+a:hover{
+  color: #ff8000
+}
+
+/* Home screen */
+.products {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.products li{
+  list-style-type: none;
+  padding: 0;
+  flex: 0 1 34rem;
+  margin: 1rem;
+  height: 50rem;
+  border-bottom: .1rem #c0c0c0 solid;
+}
+
+.product{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.product-name{
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.product-location{
+  font-size: 1.2rem;
+  color: #808080
+}
+
+.product-price{
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.product-image{
+  max-width: 34rem;
+  max-height: 34rem;
+}
+
+.product-rating{
+  margin-bottom: 1rem;
+}
+
+/* Sidebar */
+
+.brand button {
+  font-size: 3rem;
+  padding: .5rem;
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.sidebar{
+  position: fixed;
+  transition: all;
+  transform: translateX(-30rem);
+  width: 30rem;
+  background-color: #f0f0f0;
+  height: 100%;
+}
+
+.sidebar.open{
+  transform: translateX(0);
+}
+
+.sidebar-close-button{
+  border-radius: 50%;
+  border: .1rem #000000 solid;
+  width: 3rem;
+  height: 3rem;
+  padding: .5rem;
+  font-size: 2rem;
+  padding-top: 0;
+  cursor: pointer;
+  position: absolute;
+  right: .5rem;
+  top: 1.5rem;
+}
+
+
+/* Product Screen */
+
+.details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem;
+}
+
+.details-image{
+  flex: 2 1 60rem;
+}
+
+.details-image img{
+  max-width: 60rem;
+  widows: 100%;
+}
+
+.details-info{
+  flex: 1 1 30rem;
+}
+
+.details-action{
+  flex: 2 1 30rem;
+  border: .1rem #808080 solid;
+  border-radius: 0.5rem;
+  background-color: #f8f8f8;
+  padding: 1rem;
+}
+
+.details-info ul, .details-action ul{
+  list-style-type: none;
+  padding: 0;
+}
+
+.details-info li, .details-action li{
+  margin-bottom: 1rem;
+}
+
+.back-to-result{
+  padding: 1rem;
+}
+
+.details-action ul li:last-child{
+  display: flex;
+  flex-direction: column;
+}
+
+.button{
+  padding: 1rem;
+  border: .1rem #808080 solid;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  background-color: #f0c040;
+}
+
+.button:hover{
+  border : .1rem #404040 solid;
+}
+
+
+/* Login Screen */
+
+input[type=text], input[type=password], input[type=email] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.signup, .signin {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Add a hover effect for buttons */
+.signup:hover, .signin:hover {
+  opacity: 0.8;
+}
+
+
+/* Search form */
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.search-form {
+  float: center;
+  margin-top: 6px;
+}
+
+.search-bar-days {
+  float: center;
+  width: 50%
+}
+
+
+.persent-one {
+  width: 19%;
+  float: left;
+  margin-right: 1%;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.persent-one.less-per {
+  width: 16%;
+  float: left;
+  margin-right: 1%;
+}
+
+.persent-one.less-btn {
+  width: 5%;
+  float: left;
+  margin-right: 1%;
+}
+
+.flight-tab {
+  width: 100%;
+  float: left;
+  margin-top: 10px;
+  padding: 15px
+}
+
+
+/* UserAirbnbsScreen */
+
+.change-form {
+  width: 2rem;
+  height: 3rem;
+}
+
+
+/*ChatScreen */
+
+.chat-form {
+  display: flex;
+  align-items: center;
+  grid-area: chat-form;
+  border-radius: 0 0 10px 0;
+  padding-left: 42px;
+  padding-right: 22px;
+}
+
+/* Map */
+
+.leaflet-map {
+  height: 30%;
+  width: 100%;
 }
