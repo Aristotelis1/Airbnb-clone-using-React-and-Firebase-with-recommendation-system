@@ -82,7 +82,7 @@ function SearchScreen (props) {
                 isAvailable: airbnb[0].isAvailable
               }
               }}>
-              <img className="product-image" src='/images/d1.jpg' alt="product" />
+              <img className="product-image" src={airbnb[0].image} alt="product" />
           </Link>
           <Route path={"/product/" + airbnb[1]} component = {ProductScreen} />
           <div className="product-name">
