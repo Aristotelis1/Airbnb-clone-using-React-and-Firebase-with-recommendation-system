@@ -1,0 +1,5 @@
+The recommendation system is based on Matrix Factorization algorithm.
+I use python to collect the collections(userDetails,Airbnbs,ratings) from the firebase. 
+The algorithm saves the best 5 'Airbnbs' in the database for each user.
+
+#### Do not forget to use your firebase.json file, in order to connect to your firebase
